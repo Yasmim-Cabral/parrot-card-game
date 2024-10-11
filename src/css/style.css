@@ -1,0 +1,81 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Roboto";
+    background-color: #EEF9BF;
+}
+
+header{
+    height: 150px;
+    padding-top: 40px;
+}
+
+header h1{
+    font-size: 56px;
+    font-weight: 700;
+    color: #75B79E;
+}
+
+.cartas{
+    width: 100vw;
+    padding: 0 115px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.carta{
+    height: 146px;
+    width: 117px;
+    margin: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.verso{
+    height: 100%;
+    width: 100%;
+    background-color: #A7E9AF;
+    border: #99CEA8 1px solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 500ms;
+}
+
+.frente{
+    height: 100%;
+    width: 100%;
+    background-color: #A7E9AF;
+    border: #99CEA8 1px solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: all 500ms;
+    transform: rotateY(180deg);
+}
+
+.carta.virada .frente{
+    transform: rotateY(0deg);
+}
+
+.carta.virada .verso{
+    transform: rotateY(-180deg);
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
