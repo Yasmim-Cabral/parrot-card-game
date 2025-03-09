@@ -1,0 +1,83 @@
+body {
+    background-color: #EEF9BF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    font-family: "Roboto", sans-serif;
+    color: #75B79E;
+    font-size: 56px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.cartas {
+    display: flex;
+    justify-content: center;
+    margin: 0 120px;
+    flex-wrap: wrap;
+}
+
+.carta {
+    width: 117px;
+    height: 146px;
+    margin: 45px;
+    position: relative;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    border: 1px solid #99CEA8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.frente {
+    transform: rotateY(180deg);
+}
+
+.carta.virada .frente,
+.correta .frente{
+    transform: rotateY(0deg);
+}
+
+.carta.virada .verso,
+.correta .verso{
+    transform: rotateY(-180deg);
+}
+
+#confete-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite interação com elementos abaixo */
+}
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confete-queda linear infinite;
+}
+@keyframes confete-queda {
+    to {
+        transform: translateY(100vh);
+    }
+}
